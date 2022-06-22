@@ -18,7 +18,7 @@ body {
 .container {
     width: clamp(200px, 700px, 100%);
     margin: auto;
-
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,6 +26,53 @@ body {
     min-height: 100vh;
 
 }
+
+.endgame-window-wrap {
+    background-color: rgba(0, 0, 0, 0.506);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.endgame-window-wrap > .window {
+
+    padding: 50px;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.text {
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+
+.restart {
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    background-color: rgb(146, 157, 167);
+    color: white;
+}
+
+
+.restart:hover {
+    color: rgb(240, 240, 135);
+}
+
+.restart:active {
+    color: #83AEE0;
+}
+
 
 .logo {
     margin-top: 6%;

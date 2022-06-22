@@ -53,7 +53,9 @@ let gameBoard = (function () {
     //Cache DOM
     let playerOneDiv = document.querySelector('.player-one');
     let playerTwoDiv = document.querySelector('.player-two');
-
+    let endGameWindowWrap = document.querySelector('.endgame-window-wrap');
+    let windowText = document.querySelector('.window > .text');
+    let restartButton = document.querySelector('button');
 
     function _init() {
         boardDisplay.getBoardElem().forEach((element) => {
@@ -65,10 +67,29 @@ let gameBoard = (function () {
                     _movePlayerTwo(element.getAttribute("data-cell-num"));
                 }
 
-                console.log(_checkBoard());
+                let result = _checkBoard();
+
+                if (result != 0) {
+                    endGameWindowWrap.classList.remove('hide');
+                    if (result == 1) {
+                        windowText.textContent = "Player 1 wins!";
+                    }
+                    else if (result == 2) {
+                        windowText.textContent = "Player 2 wins!";
+                    }
+                    else {
+                        windowText.textContent = "Draw!";
+                    }
+                }
 
             })
         })
+
+
+        restartButton.addEventListener('click', () => {
+            document.location.reload();
+        })
+
     }
 
     _init();
@@ -134,7 +155,7 @@ let gameBoard = (function () {
         }
 
         if ((boardLookUp(1) == 'O' && boardLookUp(5) == 'O' && boardLookUp(9) == 'O') //check for (1,5,9)  (3,5,7) win combinations
-            || (boardLookUp(3) == 'O' && boardLookUp(5) == 'O' && boardLookUp(9) == 'O')) {
+            || (boardLookUp(3) == 'O' && boardLookUp(5) == 'O' && boardLookUp(7) == 'O')) {
             winner = 2;
             return winner;
         }
