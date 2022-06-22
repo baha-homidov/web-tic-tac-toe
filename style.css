@@ -50,7 +50,6 @@ body {
 }
 
 .logo>.small {
-
     color: rgb(179, 179, 179);
     font-size: 1.1rem;
     margin-top: -10px;
@@ -65,7 +64,6 @@ body {
     border-bottom: 7px solid grey;
     color: #068574;
     border-radius: 7px;
-    padding: 5px;
     font-size: 2rem;
 }
 
@@ -95,6 +93,7 @@ body {
     flex-grow: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-content: center;
     gap: 10px;
     background-color: #83AEE0;
